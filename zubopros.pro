@@ -32,7 +32,10 @@ SOURCES += main.cpp \
     wp3_14.cpp \
     wp4_5.cpp \
     wp4_6.cpp \
-    patientdata.cpp
+    patientdata.cpp \
+    patienthistory.cpp \
+    patientclass.cpp \
+    pgglobalstrings.cpp
 
 HEADERS  += \
     dentistwizard.h \
@@ -54,7 +57,10 @@ HEADERS  += \
     wp3_14.h \
     wp4_5.h \
     wp4_6.h \
-    patientdata.h
+    patientdata.h \
+    patienthistory.h \
+    patientclass.h \
+    pgglobalstrings.h
 
 FORMS    += \
     wppatientinfo.ui \

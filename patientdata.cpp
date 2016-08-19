@@ -37,6 +37,26 @@ void PatientData::setTitle(const QString &title)
     m_title = title;
 }
 
+bool PatientData::furtherInvestigation() const
+{
+    return m_furtherInvestigation;
+}
+
+void PatientData::setFurtherInvestigation(bool furtherInvestigation)
+{
+    m_furtherInvestigation = furtherInvestigation;
+}
+
+bool PatientData::symptoms() const
+{
+    return m_symptoms;
+}
+
+void PatientData::setSymptoms(bool symptoms)
+{
+    m_symptoms = symptoms;
+}
+
 
 
 

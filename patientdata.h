@@ -19,13 +19,13 @@ public:
     void setPatientClass(const QString &patientClass);
 
     QString title() const;
-    void setTitle(const QString &title);
-
-    bool symptoms() const;
-    void setSympthoms(const bool &symptom);
+    void setTitle(const QString &title);   
 
     bool furtherInvestigation() const;
-    void setFurtherInstigation(const bool& furtherInvestigation);
+    void setFurtherInvestigation(bool furtherInvestigation);
+
+    bool symptoms() const;
+    void setSymptoms(bool symptoms);
 
 private:
     QStringList m_symptomList; //симптомы у пациентов
