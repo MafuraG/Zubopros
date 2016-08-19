@@ -31,7 +31,8 @@ SOURCES += main.cpp \
     wp3_13.cpp \
     wp3_14.cpp \
     wp4_5.cpp \
-    wp4_6.cpp
+    wp4_6.cpp \
+    patientdata.cpp
 
 HEADERS  += \
     dentistwizard.h \
@@ -52,7 +53,8 @@ HEADERS  += \
     wp3_13.h \
     wp3_14.h \
     wp4_5.h \
-    wp4_6.h
+    wp4_6.h \
+    patientdata.h
 
 FORMS    += \
     wppatientinfo.ui \

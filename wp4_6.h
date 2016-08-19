@@ -16,7 +16,7 @@ public:
     ~Wp4_6();
 
 private:
-    Ui::Wp4_6 *ui;
+    Ui::Wp4_6 *ui;    
 };
 
 #endif // WP4_6_H
