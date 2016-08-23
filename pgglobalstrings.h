@@ -17,6 +17,7 @@ public:
     static QString CLASS3_3;
     static QString CLASS3_4;
     static QString CLASS4;
+    static QString CLASS_UNKNOWN;
 };
 
 #endif // PGGLOBALSTRINGS_H

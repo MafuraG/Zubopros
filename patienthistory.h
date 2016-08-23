@@ -1,8 +1,12 @@
 #ifndef PATIENTFILE_H
 #define PATIENTFILE_H
 
+#include "patientdata.h"
+
 #include <QDate>
 #include <QString>
+#include <QHash>
+#include <memory>
 
 class PatientHistory
 {
@@ -16,6 +20,8 @@ private:
 
     uint m_age;
     QDate m_date;
+    QHash<int, std::shared_ptr<PatientData>> m_patientInfo;
+
 };
 
 
