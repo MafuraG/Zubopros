@@ -35,6 +35,14 @@ public:
 
     std::shared_ptr<PatientHistory> patientHistory() const;
     void setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory);
+private slots:
+    void on_checkBox_16_clicked(bool checked);
+    void on_checkBox_17_clicked(bool checked);
+    void on_checkBox_18_clicked(bool checked);
+    void on_checkBox_19_clicked(bool checked);
+    void on_checkBox_20_clicked(bool checked);
+    void on_checkBox_21_clicked(bool checked);
+    void on_radioButton_7_clicked(bool checked);
 };
 
 #endif // WP3_1_H

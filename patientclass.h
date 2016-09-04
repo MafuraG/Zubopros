@@ -18,7 +18,7 @@ public:
         class3_4,
         class4
     };
-    QString toString(PatientClassEnum pclass);
+    static QString toString(PatientClassEnum pclass);
 };
 
 #endif // PATIENTCLASS_H
