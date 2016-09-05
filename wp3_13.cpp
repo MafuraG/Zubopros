@@ -23,4 +23,41 @@ void Wp3_13::setPatientHistory(const std::shared_ptr<PatientHistory> &patientHis
     m_patientHistory = patientHistory;
 }
 
+QString Wp3_13::Patient_Class = "КО11";
 
+
+
+void Wp3_13::on_radioButton_20_clicked(bool checked)
+{
+
+}
+
+void Wp3_13::on_checkBox_79_clicked(bool checked)
+{
+
+}
+
+void Wp3_13::on_checkBox_80_clicked(bool checked)
+{
+
+}
+
+void Wp3_13::on_checkBox_81_clicked(bool checked)
+{
+
+}
+
+void Wp3_13::on_checkBox_82_clicked(bool checked)
+{
+
+}
+
+void Wp3_13::on_checkBox_84_clicked(bool checked)
+{
+
+}
+
+void Wp3_13::on_checkBox_83_clicked(bool checked)
+{
+
+}

@@ -57,6 +57,37 @@ void PatientData::setSymptoms(bool symptoms)
     m_symptoms = symptoms;
 }
 
+unsigned int PatientData::number_plumbed_teeth() const
+{
+    return m_number_plumbed_teeth;
+}
+
+void PatientData::setNumber_plumbed_teeth(unsigned int number_plumbed_teeth)
+{
+    m_number_plumbed_teeth = number_plumbed_teeth;
+}
+
+unsigned int PatientData::number_caries_teeth() const
+{
+    return m_number_caries_teeth;
+}
+
+void PatientData::setNumber_caries_teeth(unsigned int number_caries_teeth)
+{
+    m_number_caries_teeth = number_caries_teeth;
+}
+
+
+unsigned int PatientData::number_removed_teeth() const
+{
+    return m_number_removed_teeth;
+}
+
+void PatientData::setNumber_removed_teeth(unsigned int number_removed_teeth)
+{
+    m_number_removed_teeth = number_removed_teeth;
+}
+
 
 
 

@@ -40,3 +40,36 @@ void PatientHistory::initPatientInfo()
 {
     m_patientInfo = std::make_shared<QHash<int, std::shared_ptr<PatientData>>>();
 }
+
+void PatientHistory::setPaptientSymthomsList(int wp_page,bool checked, QString value)
+{    
+    auto pdata = patientInfo()->value(wp_page);
+    QString symthom_text = value;
+    if (checked){
+       pdata->symptomList().append(symthom_text);
+    }else{
+       pdata->symptomList().removeAll(symthom_text);
+    }
+}
+
+void PatientHistory::setPatientSymthoms(int wp_page, bool value)
+{
+    auto pdata = patientInfo()->value(wp_page);
+
+    if (value){
+        pdata->setSymptoms(true);
+    }else{
+        pdata->setSymptoms(false);
+    }
+}
+
+void PatientHistory::setPatientFurtherInvestigation(int wp_page, bool value)
+{
+    auto pdata = patientInfo()->value(wp_page);
+
+    if (value){
+        pdata->setFurtherInvestigation(true);
+    }else{
+        pdata->setFurtherInvestigation(false);
+    }
+}

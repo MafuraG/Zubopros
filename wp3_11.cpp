@@ -25,3 +25,33 @@ void Wp3_11::setPatientHistory(const std::shared_ptr<PatientHistory> &patientHis
     m_patientHistory = patientHistory;
 }
 
+QString Wp3_11::Patient_Class = "КО9";
+
+
+void Wp3_11::on_radioButton_18_clicked(bool checked)
+{
+    patientHistory()->setPatientSymthoms(PgGlobalConstants::WP_3_11,checked);
+}
+
+void Wp3_11::on_checkBox_70_clicked(bool checked)
+{
+    QString sym_txt = ui->checkBox_70->text();
+    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_11,checked,sym_txt);
+}
+
+void Wp3_11::on_checkBox_71_clicked(bool checked)
+{
+    QString sym_txt = ui->checkBox_71->text();
+    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_11,checked,sym_txt);
+}
+
+void Wp3_11::on_checkBox_72_clicked(bool checked)
+{
+    QString sym_txt = ui->checkBox_72->text();
+    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_11,checked,sym_txt);
+}
+
+void Wp3_11::on_checkBox_66_clicked(bool checked)
+{
+    patientHistory()->setPatientFurtherInvestigation(PgGlobalConstants::WP_3_11,checked);
+}

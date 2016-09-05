@@ -11,6 +11,8 @@ Wp3_1::Wp3_1(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
     setPatientHistory(patientHistory);
 }
 
+Qstring Wp3_1::Patient_Class = "К00 К01";
+
 Wp3_1::~Wp3_1()
 {
     delete ui;
@@ -105,7 +107,7 @@ void Wp3_1::on_checkBox_21_clicked(bool checked)
 {
     auto pInfo = m_patientHistory->patientInfo();
     auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_20->text();
+
     if (checked){
         pdata->setFurtherInvestigation(true);
     }else{

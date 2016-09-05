@@ -21,6 +21,22 @@ public:
 
     std::shared_ptr<PatientHistory> patientHistory() const;
     void setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory);
+    static QString Patient_Class;
+
+private slots:
+    void on_radioButton_16_clicked(bool checked);
+
+    void on_checkBox_53_clicked(bool checked);
+
+    void on_checkBox_58_clicked(bool checked);
+
+    void on_checkBox_59_clicked(bool checked);
+
+    void on_checkBox_60_clicked(bool checked);
+
+    void on_checkBox_61_clicked(bool checked);
+
+    void on_checkBox_52_clicked(bool checked);
 
 private:
     Ui::Wp3_9 *ui;

@@ -20,11 +20,11 @@ public:
                    std::shared_ptr<PatientHistory> patientHistory = std::make_shared<PatientHistory>());
 
     ~Wp3_1();
+    static QString Patient_Class;
 
 private:
     Ui::Wp3_1 *ui;
     std::shared_ptr<PatientHistory> m_patientHistory;
-
 
     // QWizardPage interface
 public:
