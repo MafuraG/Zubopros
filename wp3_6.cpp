@@ -30,49 +30,55 @@ QString Wp3_6::Patient_class = "КО5.2 К05.3 К05.4";
 
 void Wp3_6::on_radioButton_13_clicked(bool checked)
 {
+    if (!checked){
+        enableCheckBoxes(true);
+        patientHistory()->clearPatientSymthomList(PgGlobalConstants::WP_3_1);
+    }else{
+        enableCheckBoxes(false);
+    }
     patientHistory()->setPatientSymthoms(PgGlobalConstants::WP_3_6,checked);
 }
 
 void Wp3_6::on_checkBox_4_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_4->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
 }
 
 void Wp3_6::on_checkBox_42_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_42->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
 }
 
 void Wp3_6::on_checkBox_43_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_43->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
 }
 
 void Wp3_6::on_checkBox_5_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_5->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
 }
 
 void Wp3_6::on_checkBox_44_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_44->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
 }
 
 void Wp3_6::on_checkBox_45_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_45->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
 }
 
 void Wp3_6::on_checkBox_6_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_6->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_6, checked,sym_txt);
 }
 
 void Wp3_6::on_checkBox_46_clicked(bool checked)
@@ -83,4 +89,15 @@ void Wp3_6::on_checkBox_46_clicked(bool checked)
 void Wp3_6::setCheckBoxEnabled(QCheckBox *chkbox, bool value)
 {
     if (chkbox != nullptr) chkbox->setEnabled(value);
+}
+
+void Wp3_6::enableCheckBoxes(bool value)
+{
+    setCheckBoxEnabled(ui->checkBox_4, value);
+    setCheckBoxEnabled(ui->checkBox_42, value);
+    setCheckBoxEnabled(ui->checkBox_43, value);
+    setCheckBoxEnabled(ui->checkBox_5, value);
+    setCheckBoxEnabled(ui->checkBox_44, value);
+    setCheckBoxEnabled(ui->checkBox_45, value);
+    setCheckBoxEnabled(ui->checkBox_6, value);
 }

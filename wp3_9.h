@@ -5,7 +5,7 @@
 #include <memory>
 #include <QWizardPage>
 #include "patienthistory.h"
-
+#include <QCheckBox>
 namespace Ui {
 class Wp3_9;
 }
@@ -39,7 +39,7 @@ private slots:
     void on_checkBox_52_clicked(bool checked);
 
     void setCheckBoxEnabled(QCheckBox *chkbox , bool value);
-    void disableCheckBoxes(bool value);
+    void enableCheckBoxes(bool value);
 private:
     Ui::Wp3_9 *ui;
     std::shared_ptr<PatientHistory> m_patientHistory;

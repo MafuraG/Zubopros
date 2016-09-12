@@ -11,7 +11,7 @@ Wp3_1::Wp3_1(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
     setPatientHistory(patientHistory);
 }
 
-Qstring Wp3_1::Patient_Class = "К00 К01";
+QString Wp3_1::Patient_Class = "К00 К01";
 
 Wp3_1::~Wp3_1()
 {
@@ -116,15 +116,15 @@ void Wp3_1::on_checkBox_21_clicked(bool checked)
 }
 
 void Wp3_1::on_radioButton_7_clicked(bool checked)
-{
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_20->text();
-    if (checked){
-        pdata->setSymptoms(true);
-    }else{
-        pdata->setSymptoms(false);
+{    
+    if (!checked){
+        enableCheckBoxes(true);
+        patientHistory()->clearPatientSymthomList(PgGlobalConstants::WP_3_1);
+    }else{       
+        enableCheckBoxes(false);
     }
+
+    patientHistory()->setPatientSymthoms(PgGlobalConstants::WP_3_1,checked);
 }
 
 void Wp3_1::setCheckBoxEnabled(QCheckBox *chkbox, bool value)
@@ -132,7 +132,7 @@ void Wp3_1::setCheckBoxEnabled(QCheckBox *chkbox, bool value)
     if (chkbox != nullptr) chkbox->setEnabled(value);
 }
 
-void Wp3_1::disableCheckBoxes(bool value)
+void Wp3_1::enableCheckBoxes(bool value)
 {
     setCheckBoxEnabled(ui->checkBox_16,value);
     setCheckBoxEnabled(ui->checkBox_17,value);

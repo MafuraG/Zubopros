@@ -5,6 +5,8 @@
 #include <memory>
 #include <QWizardPage>
 #include "patienthistory.h"
+#include <QCheckBox>
+#include <QSpinBox>
 
 namespace Ui {
 class Wp3_2;
@@ -35,6 +37,11 @@ private slots:
     
     void on_spinBox_3_valueChanged(int arg1);
     
+    void on_spinBox_4_valueChanged(int arg1);
+
+    void setSpinBoxEnabled(QSpinBox *spinbox , bool value);
+    void enableSpinBoxes(bool value);
+
 private:
     Ui::Wp3_2 *ui;
     std::shared_ptr<PatientHistory> m_patientHistory;

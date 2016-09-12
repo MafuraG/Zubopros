@@ -30,37 +30,43 @@ QString Wp3_5::Patient_Class = "КО5";
 
 void Wp3_5::on_radioButton_12_clicked(bool checked)
 {
+    if (!checked){
+        enableCheckBoxes(true);
+        patientHistory()->clearPatientSymthomList(PgGlobalConstants::WP_3_1);
+    }else{
+        enableCheckBoxes(false);
+    }
     patientHistory()->setPatientSymthoms(PgGlobalConstants::WP_3_5,checked);
 }
 
 void Wp3_5::on_checkBox_36_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_36->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
 }
 
 void Wp3_5::on_checkBox_37_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_37->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
 }
 
 void Wp3_5::on_checkBox_38_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_38->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
 }
 
 void Wp3_5::on_checkBox_39_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_39->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
 }
 
 void Wp3_5::on_checkBox_40_clicked(bool checked)
 {
     QString sym_txt = ui->checkBox_40->text();
-    patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_5,checked,sym_txt);
 }
 
 void Wp3_5::on_checkBox_41_clicked(bool checked)
@@ -71,4 +77,13 @@ void Wp3_5::on_checkBox_41_clicked(bool checked)
 void Wp3_5::setCheckBoxEnabled(QCheckBox *chkbox, bool value)
 {
     if (chkbox != nullptr) chkbox->setEnabled(value);
+}
+
+void Wp3_5::enableCheckBoxes(bool value)
+{
+    setCheckBoxEnabled(ui->checkBox_36, value);
+    setCheckBoxEnabled(ui->checkBox_37, value);
+    setCheckBoxEnabled(ui->checkBox_38, value);
+    setCheckBoxEnabled(ui->checkBox_39, value);
+    setCheckBoxEnabled(ui->checkBox_40, value);
 }

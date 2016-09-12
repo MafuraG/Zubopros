@@ -28,6 +28,12 @@ QString Wp4_5::Patient_Class = "КО13.0";
 
 void Wp4_5::on_radioButton_22_clicked(bool checked)
 {
+    if (!checked){
+        enableCheckBoxes(true);
+        patientHistory()->clearPatientSymthomList(PgGlobalConstants::WP_3_1);
+    }else{
+        enableCheckBoxes(false);
+    }
     patientHistory()->setPatientSymthoms(PgGlobalConstants::WP_4_5,checked);
 }
 
@@ -93,4 +99,17 @@ void Wp4_5::on_checkBox_88_clicked(bool checked)
 void Wp4_5::setCheckBoxEnabled(QCheckBox *chkbox, bool value)
 {
     if (chkbox != nullptr) chkbox->setEnabled(value);
+}
+
+void Wp4_5::enableCheckBoxes(bool value)
+{
+    setCheckBoxEnabled(ui->checkBox_89, value);
+    setCheckBoxEnabled(ui->checkBox_90, value);
+    setCheckBoxEnabled(ui->checkBox_91, value);
+    setCheckBoxEnabled(ui->checkBox_92, value);
+    setCheckBoxEnabled(ui->checkBox_93, value);
+    setCheckBoxEnabled(ui->checkBox_94, value);
+    setCheckBoxEnabled(ui->checkBox_95, value);
+    setCheckBoxEnabled(ui->checkBox_96, value);
+    setCheckBoxEnabled(ui->checkBox_97, value);
 }

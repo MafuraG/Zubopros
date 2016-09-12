@@ -45,7 +45,7 @@ private slots:
     void on_checkBox_21_clicked(bool checked);
     void on_radioButton_7_clicked(bool checked);
     void setCheckBoxEnabled(QCheckBox *chkbox , bool value);
-    void disableCheckBoxes(bool value);
+    void enableCheckBoxes(bool value);
 };
 
 #endif // WP3_1_H

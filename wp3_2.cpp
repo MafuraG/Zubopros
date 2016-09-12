@@ -38,6 +38,13 @@ void Wp3_2::on_radioButton_9_clicked(bool checked)
     }else{
         pdata->setSymptoms(false);
     }
+
+    if (!checked){
+        enableSpinBoxes(true);
+        patientHistory()->clearPatientSymthomList(PgGlobalConstants::WP_3_2);
+    }else{
+        enableSpinBoxes(false);
+    }
 }
 
 void Wp3_2::on_spinBox_2_valueChanged(int arg1)
@@ -58,14 +65,10 @@ void Wp3_2::on_spinBox_3_valueChanged(int arg1)
     pdata->setNumber_removed_teeth(num_ydal);
 }
 
-void Wp3_2::on_spinBox_4_valueChanged(int arg1)
-{
-    //Число кариезнных зуб
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_2);
-    int num_carries = arg1;
-    pdata->setNumber_caries_teeth(num_carries);
-}
+//void Wp3_2::on_spinBox_4_valueChanged(int arg1)
+//{
+
+//}
 
 void Wp3_2::on_checkBox_99_clicked(bool checked)
 {
@@ -79,3 +82,25 @@ void Wp3_2::on_checkBox_99_clicked(bool checked)
         pdata->setFurtherInvestigation(false);
     }
 }
+
+void Wp3_2::on_spinBox_4_valueChanged(int arg1)
+{
+    //Число кариезнных зуб
+    auto pInfo = m_patientHistory->patientInfo();
+    auto pdata = pInfo->value(PgGlobalConstants::WP_3_2);
+    int num_carries = arg1;
+    pdata->setNumber_caries_teeth(num_carries);
+}
+
+void Wp3_2::setSpinBoxEnabled(QSpinBox *spinbox, bool value)
+{
+    if (spinbox != nullptr) spinbox->setEnabled(value);
+}
+
+void Wp3_2::enableSpinBoxes(bool value)
+{
+    setSpinBoxEnabled(ui->spinBox_2,value);
+    setSpinBoxEnabled(ui->spinBox_3,value);
+    setSpinBoxEnabled(ui->spinBox_4,value);
+}
+

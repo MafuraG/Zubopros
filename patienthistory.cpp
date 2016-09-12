@@ -41,7 +41,7 @@ void PatientHistory::initPatientInfo()
     m_patientInfo = std::make_shared<QHash<int, std::shared_ptr<PatientData>>>();
 }
 
-void PatientHistory::setPaptientSymthomsList(int wp_page,bool checked, QString value)
+void PatientHistory::setPatientSymthomsList(int wp_page,bool checked, QString value)
 {    
     auto pdata = patientInfo()->value(wp_page);
     QString symthom_text = value;
@@ -50,6 +50,12 @@ void PatientHistory::setPaptientSymthomsList(int wp_page,bool checked, QString v
     }else{
        pdata->symptomList().removeAll(symthom_text);
     }
+}
+
+void PatientHistory::clearPatientSymthomList(int wp_page)
+{
+    auto pdata = patientInfo()->value(wp_page);
+    pdata->symptomList().clear();
 }
 
 void PatientHistory::setPatientSymthoms(int wp_page, bool value)

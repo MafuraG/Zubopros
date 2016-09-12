@@ -16,7 +16,8 @@ public:
     PatientHistory();   
 
     std::shared_ptr<QHash<int, std::shared_ptr<PatientData> > > patientInfo() const;
-    void setPaptientSymthomsList(int wp_page, bool checked,QString value);//simtomi
+    void setPatientSymthomsList(int wp_page, bool checked,QString value);//simtomi
+    void clearPatientSymthomList(int wp_page);
     void setPatientSymthoms(int wp_page,bool  value);//
     void setPatientFurtherInvestigation(int wp_page, bool value);
 
