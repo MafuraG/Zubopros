@@ -126,3 +126,18 @@ void Wp3_1::on_radioButton_7_clicked(bool checked)
         pdata->setSymptoms(false);
     }
 }
+
+void Wp3_1::setCheckBoxEnabled(QCheckBox *chkbox, bool value)
+{
+    if (chkbox != nullptr) chkbox->setEnabled(value);
+}
+
+void Wp3_1::disableCheckBoxes(bool value)
+{
+    setCheckBoxEnabled(ui->checkBox_16,value);
+    setCheckBoxEnabled(ui->checkBox_17,value);
+    setCheckBoxEnabled(ui->checkBox_18,value);
+    setCheckBoxEnabled(ui->checkBox_19,value);
+    setCheckBoxEnabled(ui->checkBox_20,value);
+
+}

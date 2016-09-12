@@ -87,3 +87,8 @@ void Wp3_3::on_checkBox_226_clicked(bool checked)
     QString symthom_text = ui->checkBox_226->text();
     patientHistory()->setPaptientSymthomsList(PgGlobalConstants::WP_3_3,checked,symthom_text);
 }
+
+void Wp3_3::setCheckBoxEnabled(QCheckBox *chkbox, bool value)
+{
+    if (chkbox != nullptr) chkbox->setEnabled(value);
+}

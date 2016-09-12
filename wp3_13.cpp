@@ -61,3 +61,8 @@ void Wp3_13::on_checkBox_83_clicked(bool checked)
 {
 
 }
+
+void Wp3_13::setCheckBoxEnabled(QCheckBox *chkbox, bool value)
+{
+    if (chkbox != nullptr) chkbox->setEnabled(value);
+}

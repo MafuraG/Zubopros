@@ -38,6 +38,9 @@ private slots:
 
     void on_checkBox_73_clicked(bool checked);
 
+    void setCheckBoxEnabled(QCheckBox *chkbox , bool value);
+    void disableCheckBoxes(bool value);
+
 private:
     Ui::Wp3_12 *ui;
     std::shared_ptr<PatientHistory> m_patientHistory;

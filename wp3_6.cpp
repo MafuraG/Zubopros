@@ -79,3 +79,8 @@ void Wp3_6::on_checkBox_46_clicked(bool checked)
 {
     patientHistory()->setPatientFurtherInvestigation(PgGlobalConstants::WP_3_6,checked);
 }
+
+void Wp3_6::setCheckBoxEnabled(QCheckBox *chkbox, bool value)
+{
+    if (chkbox != nullptr) chkbox->setEnabled(value);
+}
