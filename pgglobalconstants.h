@@ -37,7 +37,8 @@ public:
            WP_3_13,
            WP_3_14,
            WP_4_5,
-           WP_4_6
+           WP_4_6,
+           WP_Diagnosis
          };
 };
 

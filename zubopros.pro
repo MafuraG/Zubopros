@@ -36,7 +36,9 @@ SOURCES += main.cpp \
     patienthistory.cpp \
     patientclass.cpp \
     pgglobalconstants.cpp \
-    patientwizardpage.cpp
+    patientwizardpage.cpp \
+    wpdiagnosis.cpp \
+    diagnosisform.cpp
 
 HEADERS  += \
     dentistwizard.h \
@@ -62,7 +64,9 @@ HEADERS  += \
     patienthistory.h \
     patientclass.h \
     pgglobalconstants.h \
-    patientwizardpage.h
+    patientwizardpage.h \
+    wpdiagnosis.h \
+    diagnosisform.h
 
 FORMS    += \
     wppatientinfo.ui \
@@ -82,4 +86,6 @@ FORMS    += \
     wp3_13.ui \
     wp3_14.ui \
     wp4_5.ui \
-    wp4_6.ui
+    wp4_6.ui \
+    wpdiagnosis.ui \
+    diagnosisform.ui

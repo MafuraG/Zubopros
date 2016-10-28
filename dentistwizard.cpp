@@ -18,6 +18,7 @@
 #include "wppatientclass.h"
 #include "wppatientinfo.h"
 #include "pgglobalconstants.h"
+#include "wpdiagnosis.h"
 
 DentistWizard::DentistWizard(QWidget *parent)
     :QWizard(parent)
@@ -42,6 +43,7 @@ DentistWizard::DentistWizard(QWidget *parent)
     setPage(PgGlobalConstants::WP_3_14, new Wp3_14(parent,m_patientHistory));
     setPage(PgGlobalConstants::WP_4_5, new Wp4_5(parent,m_patientHistory));
     setPage(PgGlobalConstants::WP_4_6, new Wp4_6(parent,m_patientHistory));
+    setPage(PgGlobalConstants::WP_Diagnosis,new WpDiagnosis(parent,m_patientHistory));
 
 //    setPatientHistory(PgGlobalConstants::WP_PatientInfo);
 //    setPatientHistory(PgGlobalConstants::WP_PatientClass);
