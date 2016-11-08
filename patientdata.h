@@ -36,6 +36,7 @@ public:
     unsigned int number_removed_teeth() const;
     void setNumber_removed_teeth(unsigned int number_removed_teeth);
 
+
 private:
     QStringList m_symptomList; //симптомы у пациентов
     bool m_furtherInvestigation; //Нужен ли еще исследование?

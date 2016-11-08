@@ -7,11 +7,13 @@ WpDiagnosis::WpDiagnosis(QWidget *parent, std::shared_ptr<PatientHistory> patien
 {
     ui->setupUi(this);
     setPatientHistory(patientHistory);
+    dform = new DiagnosisForm();
 }
 
 WpDiagnosis::~WpDiagnosis()
 {
     delete ui;
+    delete dform;
 }
 std::shared_ptr<PatientHistory> WpDiagnosis::patientHistory() const
 {
@@ -23,3 +25,8 @@ void WpDiagnosis::setPatientHistory(const std::shared_ptr<PatientHistory> &patie
     m_patientHistory = patientHistory;
 }
 
+
+void WpDiagnosis::on_diagnosisButton_clicked()
+{
+    dform->show();
+}

@@ -9,9 +9,10 @@ Wp3_1::Wp3_1(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
 {
     ui->setupUi(this);
     setPatientHistory(patientHistory);
+    patientHistory->setPatientClass(PgGlobalConstants::WP_3_1,Wp3_1::Patient_Class);
 }
 
-QString Wp3_1::Patient_Class = "К00 К01";
+QString Wp3_1::Patient_Class = "К00, К01";
 
 Wp3_1::~Wp3_1()
 {

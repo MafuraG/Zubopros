@@ -79,3 +79,33 @@ void PatientHistory::setPatientFurtherInvestigation(int wp_page, bool value)
         pdata->setFurtherInvestigation(false);
     }
 }
+
+void PatientHistory::setPatientClass(int wp_page, QString value)
+{
+    std::shared_ptr<PatientData> pdata = patientInfo()->value(wp_page);
+
+    pdata->setPatientClass(value);
+}
+
+void PatientHistory::diagnosis()
+{
+   QStringList groupD2;
+   QStringList groupD3;
+   QStringList groupAllowed;
+   for (int i = 0; i < patientInfo()->keys().count(); i++){
+       int key = patientInfo()->keys()[i];
+       std::shared_ptr<PatientData> pInfo = patientInfo()->value(key);
+
+       if (pInfo->furtherInvestigation() == false){
+           if (pInfo->symptomList().count() == 0 && pInfo){
+               groupD2.append(pInfo->patientClass());
+           }else{
+               groupD3.append(pInfo->patientClass());
+           }
+       }else{
+            groupD3.append(pInfo->patientClass());
+       }
+
+
+   }
+}

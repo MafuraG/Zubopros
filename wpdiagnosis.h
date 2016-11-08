@@ -2,6 +2,7 @@
 #define WPDIAGNOSIS_H
 
 #include <QWizardPage>
+#include "diagnosisform.h"
 #include "patienthistory.h"
 #include <memory>
 
@@ -22,8 +23,12 @@ public:
     std::shared_ptr<PatientHistory> patientHistory() const;
     void setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory);
 
+private slots:
+    void on_diagnosisButton_clicked();
+
 private:
     Ui::WpDiagnosis *ui;
+    DiagnosisForm *dform;
     std::shared_ptr<PatientHistory> m_patientHistory;
 };
 

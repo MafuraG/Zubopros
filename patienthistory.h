@@ -20,7 +20,9 @@ public:
     void clearPatientSymthomList(int wp_page);
     void setPatientSymthoms(int wp_page,bool  value);//
     void setPatientFurtherInvestigation(int wp_page, bool value);
+    void diagnosis();
 
+    void setPatientClass(int wp_page, QString value);
 private:
     QString m_firstName;
     QString m_patronym;
@@ -29,7 +31,7 @@ private:
     uint m_age;
     QDate m_date;
     PatientClass::PatientClassEnum m_pclass;
-    std::shared_ptr<QHash<int, std::shared_ptr<PatientData>>> m_patientInfo;
+    std::shared_ptr<QHash<int, std::shared_ptr<PatientData>>> m_patientInfo;    
     void initPatientData();
     void initPatientInfo();
 
