@@ -17,8 +17,7 @@ class Wp3_1 : public QWizardPage
     Q_OBJECT
 
 public:
-    explicit Wp3_1(QWidget *parent = 0,
-                   std::shared_ptr<PatientHistory> patientHistory = std::make_shared<PatientHistory>());
+    explicit Wp3_1(QWidget *parent = 0);
 
     ~Wp3_1();
     static QString Patient_Class;

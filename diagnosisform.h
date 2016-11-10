@@ -13,6 +13,7 @@ class DiagnosisForm : public QDialog
 
 public:
     explicit DiagnosisForm(QWidget *parent = 0);
+    void setFIO(QString &fio);
     ~DiagnosisForm();
 
 private:

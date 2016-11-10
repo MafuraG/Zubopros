@@ -8,6 +8,13 @@ DiagnosisForm::DiagnosisForm(QWidget *parent) :
     ui->setupUi(this);
 }
 
+void DiagnosisForm::setFIO(QString &fio)
+{
+    QString fullText = ui->textBrowser->document()->toHtml();
+    fullText = fullText.replace("P1",fio);
+    ui->textBrowser->document()->setHtml(fullText);
+}
+
 DiagnosisForm::~DiagnosisForm()
 {
     delete ui;

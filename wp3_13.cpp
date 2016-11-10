@@ -1,26 +1,27 @@
 #include "wp3_13.h"
 #include "ui_wp3_13.h"
 
-Wp3_13::Wp3_13(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
+Wp3_13::Wp3_13(QWidget *parent) :
     QWizardPage(parent),
     ui(new Ui::Wp3_13)
 {
-    ui->setupUi(this);
-    setPatientHistory(patientHistory);
+    ui->setupUi(this);    
+
 }
 Wp3_13::~Wp3_13()
 {
     delete ui;
 }
 
-std::shared_ptr<PatientHistory> Wp3_13::patientHistory() const
+std::shared_ptr<PatientHistory> Wp3_13::patientHistory()
 {
     return m_patientHistory;
 }
 
-void Wp3_13::setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory)
+void Wp3_13::setPatientHistory( std::shared_ptr<PatientHistory> &patientHistory)
 {
     m_patientHistory = patientHistory;
+    patientHistory->setPatientClass(PgGlobalConstants::WP_3_13,Wp3_13::Patient_Class);
 }
 
 QString Wp3_13::Patient_Class = "КО11";

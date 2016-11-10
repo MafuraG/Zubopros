@@ -17,12 +17,11 @@ class Wp3_2 : public QWizardPage
     Q_OBJECT
 
 public:
-    explicit Wp3_2(QWidget *parent = 0,
-                   std::shared_ptr<PatientHistory> patientHistory = std::make_shared<PatientHistory>());
+    explicit Wp3_2(QWidget *parent = 0);
     ~Wp3_2();
 
-    std::shared_ptr<PatientHistory> patientHistory() const;
-    void setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory);
+    std::shared_ptr<PatientHistory> patientHistory();
+    void setPatientHistory(std::shared_ptr<PatientHistory> &patientHistory);
     static QString Patient_Class;
     
 private slots:

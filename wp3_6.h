@@ -15,13 +15,12 @@ class Wp3_6 : public QWizardPage
     Q_OBJECT
 
 public:
-    explicit Wp3_6 (QWidget *parent = 0,
-                   std::shared_ptr<PatientHistory> patientHistory = std::make_shared<PatientHistory>());
+    explicit Wp3_6 (QWidget *parent = 0);
     ~Wp3_6();
 
-    std::shared_ptr<PatientHistory> patientHistory() const;
-    void setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory);
-    static QString Patient_class;
+    std::shared_ptr<PatientHistory> patientHistory();
+    void setPatientHistory( std::shared_ptr<PatientHistory> &patientHistory);
+    static QString Patient_Class;
 private slots:
     void on_radioButton_13_clicked(bool checked);
 

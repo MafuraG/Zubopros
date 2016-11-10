@@ -2,12 +2,12 @@
 #include "ui_wp3_10.h"
 
 
-Wp3_10::Wp3_10(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory):
+Wp3_10::Wp3_10(QWidget *parent):
     QWizardPage(parent),
     ui(new Ui::Wp3_10)
 {
-    ui->setupUi(this);
-    setPatientHistory(patientHistory);
+    ui->setupUi(this);    
+
 }
 
 Wp3_10::~Wp3_10()
@@ -15,14 +15,15 @@ Wp3_10::~Wp3_10()
     delete ui;
 }
 
-std::shared_ptr<PatientHistory> Wp3_10::patientHistory() const
+std::shared_ptr<PatientHistory> Wp3_10::patientHistory()
 {
     return m_patientHistory;
 }
 
-void Wp3_10::setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory)
+void Wp3_10::setPatientHistory(std::shared_ptr<PatientHistory> &patientHistory)
 {
     m_patientHistory = patientHistory;
+    patientHistory->setPatientClass(PgGlobalConstants::WP_3_10,Wp3_10::Patient_Class);
 }
 
 QString Wp3_10::Patient_Class = "КО8";

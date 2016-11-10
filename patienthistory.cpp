@@ -87,11 +87,14 @@ void PatientHistory::setPatientClass(int wp_page, QString value)
     pdata->setPatientClass(value);
 }
 
-void PatientHistory::diagnosis()
+void PatientHistory::diagnosis(QStringList &groupD2,
+                                QStringList &groupD3,
+                                QStringList &groupAllowed)
 {
-   QStringList groupD2;
-   QStringList groupD3;
-   QStringList groupAllowed;
+   groupAllowed.clear();
+   groupD2.clear();
+   groupD3.clear();
+
    for (int i = 0; i < patientInfo()->keys().count(); i++){
        int key = patientInfo()->keys()[i];
        std::shared_ptr<PatientData> pInfo = patientInfo()->value(key);
@@ -108,4 +111,34 @@ void PatientHistory::diagnosis()
 
 
    }
+}
+
+QString PatientHistory::fio() const
+{
+    return m_fio;
+}
+
+void PatientHistory::setFio(const QString &fio)
+{
+    m_fio = fio;
+}
+
+QDate PatientHistory::date() const
+{
+    return m_date;
+}
+
+void PatientHistory::setDate(const QDate &date)
+{
+    m_date = date;
+}
+
+uint PatientHistory::age() const
+{
+    return m_age;
+}
+
+void PatientHistory::setAge(const uint &age)
+{
+    m_age = age;
 }

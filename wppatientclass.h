@@ -15,11 +15,10 @@ class WpPatientClass : public QWizardPage
     Q_OBJECT
 
 public:
-    explicit WpPatientClass(QWidget *parent = 0,
-                            std::shared_ptr<PatientHistory> patientHistory = std::make_shared<PatientHistory>());
+    explicit WpPatientClass(QWidget *parent = 0);
     ~WpPatientClass();
 
-    std::shared_ptr<PatientHistory> patientHistory() const;
+    std::shared_ptr<PatientHistory> patientHistory();
     void setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory);
 
 private:

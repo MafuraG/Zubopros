@@ -1,12 +1,11 @@
 #include "wp4_5.h"
 #include "ui_wp4_5.h"
 
-Wp4_5::Wp4_5(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
+Wp4_5::Wp4_5(QWidget *parent) :
     QWizardPage(parent),
     ui(new Ui::Wp4_5)
 {
-    ui->setupUi(this);
-    setPatientHistory(patientHistory);
+    ui->setupUi(this);   
 }
 
 Wp4_5::~Wp4_5()
@@ -14,14 +13,15 @@ Wp4_5::~Wp4_5()
     delete ui;
 }
 
-std::shared_ptr<PatientHistory> Wp4_5::patientHistory() const
+std::shared_ptr<PatientHistory> Wp4_5::patientHistory()
 {
     return m_patientHistory;
 }
 
-void Wp4_5::setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory)
+void Wp4_5::setPatientHistory(std::shared_ptr<PatientHistory> &patientHistory)
 {
     m_patientHistory = patientHistory;
+    patientHistory->setPatientClass(PgGlobalConstants::WP_4_5,Wp4_5::Patient_Class);
 }
 
 QString Wp4_5::Patient_Class = "КО13.0";

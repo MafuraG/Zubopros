@@ -1,12 +1,13 @@
 #include "wp3_5.h"
 #include "ui_wp3_5.h"
 
-Wp3_5::Wp3_5(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
+Wp3_5::Wp3_5(QWidget *parent) :
     QWizardPage(parent),
     ui(new Ui::Wp3_5)
 {
     ui->setupUi(this);
-    setPatientHistory(patientHistory);
+
+
 }
 
 Wp3_5::~Wp3_5()
@@ -14,14 +15,15 @@ Wp3_5::~Wp3_5()
     delete ui;
 }
 
-std::shared_ptr<PatientHistory> Wp3_5::patientHistory() const
+std::shared_ptr<PatientHistory> Wp3_5::patientHistory()
 {
     return m_patientHistory;
 }
 
-void Wp3_5::setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory)
+void Wp3_5::setPatientHistory(std::shared_ptr<PatientHistory> &patientHistory)
 {
     m_patientHistory = patientHistory;
+    patientHistory->setPatientClass(PgGlobalConstants::WP_3_5,Wp3_5::Patient_Class);
 }
 
 QString Wp3_5::Patient_Class = "КО5";

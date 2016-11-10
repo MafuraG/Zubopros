@@ -28,5 +28,7 @@ void WpDiagnosis::setPatientHistory(const std::shared_ptr<PatientHistory> &patie
 
 void WpDiagnosis::on_diagnosisButton_clicked()
 {
+    QString fio = patientHistory()->fio();
+    dform->setFIO(fio);
     dform->show();
 }

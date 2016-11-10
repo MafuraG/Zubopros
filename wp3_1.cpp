@@ -3,13 +3,11 @@
 #include <QDebug>
 #include "pgglobalconstants.h"
 
-Wp3_1::Wp3_1(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
+Wp3_1::Wp3_1(QWidget *parent) :
     QWizardPage(parent),
     ui(new Ui::Wp3_1)
 {
     ui->setupUi(this);
-    setPatientHistory(patientHistory);
-    patientHistory->setPatientClass(PgGlobalConstants::WP_3_1,Wp3_1::Patient_Class);
 }
 
 QString Wp3_1::Patient_Class = "К00, К01";
@@ -27,6 +25,7 @@ std::shared_ptr<PatientHistory> Wp3_1::patientHistory() const
 void Wp3_1::setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory)
 {
     m_patientHistory = patientHistory;
+    patientHistory->setPatientClass(PgGlobalConstants::WP_3_1,Wp3_1::Patient_Class);
 }
 
 bool Wp3_1::validatePage()
