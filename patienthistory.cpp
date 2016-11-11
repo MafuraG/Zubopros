@@ -1,4 +1,5 @@
 #include "patienthistory.h"
+#include <QDebug>
 
 PatientHistory::PatientHistory()
 {
@@ -97,16 +98,22 @@ void PatientHistory::diagnosis(QStringList &groupD2,
 
    for (int i = 0; i < patientInfo()->keys().count(); i++){
        int key = patientInfo()->keys()[i];
+       if (key == PgGlobalConstants::WP_PatientClass ||
+           key == PgGlobalConstants::WP_PatientInfo) continue;
        std::shared_ptr<PatientData> pInfo = patientInfo()->value(key);
 
+
        if (pInfo->furtherInvestigation() == false){
-           if (pInfo->symptomList().count() == 0 && pInfo){
+           if (pInfo->symptomList().count() == 0){
                groupD2.append(pInfo->patientClass());
+               qDebug()<<"D2 = "<<pInfo->patientClass();
            }else{
                groupD3.append(pInfo->patientClass());
+               qDebug()<<"D3 = "<<pInfo->patientClass();
            }
        }else{
             groupD3.append(pInfo->patientClass());
+            qDebug()<<"D3 not allowed = "<<pInfo->patientClass();
        }
 
 
@@ -141,4 +148,19 @@ uint PatientHistory::age() const
 void PatientHistory::setAge(const uint &age)
 {
     m_age = age;
+}
+
+PatientClass::PatientClassEnum PatientHistory::pclass() const
+{
+    return m_pclass;
+}
+
+QString PatientHistory::pclass_Str()const
+{
+    return PatientClass::toString(pclass());
+}
+
+void PatientHistory::setPclass(const PatientClass::PatientClassEnum &pclass)
+{
+    m_pclass = pclass;
 }

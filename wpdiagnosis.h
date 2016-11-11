@@ -30,6 +30,7 @@ private:
     Ui::WpDiagnosis *ui;
     DiagnosisForm *dform;
     std::shared_ptr<PatientHistory> m_patientHistory;
+    QString joinStrings(const QStringList &list);
 };
 
 #endif // WPDIAGNOSIS_H

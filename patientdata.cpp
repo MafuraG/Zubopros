@@ -9,7 +9,7 @@ PatientData::~PatientData()
 {
 
 }
-QStringList PatientData::symptomList() const
+QStringList PatientData::symptomList()
 {
     return m_symptomList;
 }

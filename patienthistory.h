@@ -32,13 +32,17 @@ public:
     uint age() const;
     void setAge(const uint &age);
 
+    PatientClass::PatientClassEnum pclass() const;
+    void setPclass(const PatientClass::PatientClassEnum &pclass);
+
+    QString pclass_Str() const;
 private:
     QString m_fio;
 
     uint m_age;
     QDate m_date;
     PatientClass::PatientClassEnum m_pclass;
-    std::shared_ptr<QHash<int, std::shared_ptr<PatientData>>> m_patientInfo;    
+    std::shared_ptr<QHash<int, std::shared_ptr<PatientData>>> m_patientInfo;
     void initPatientData();
     void initPatientInfo();
 

@@ -30,7 +30,7 @@ DentistWizard::DentistWizard(QWidget *parent)
     setPage(PgGlobalConstants::WP_PatientInfo, wp);
 
     auto *wp1 = new WpPatientClass();
-    wp->setPatientHistory(m_patientHistory);
+    wp1->setPatientHistory(m_patientHistory);
     setPage(PgGlobalConstants::WP_PatientClass, wp1);
 
     auto *wp3_1 = new Wp3_1();

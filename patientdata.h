@@ -12,7 +12,7 @@ public:
     PatientData();
     ~PatientData();
 
-    QStringList symptomList() const; //список симптомов где поставлена голочка
+    QStringList symptomList(); //список симптомов где поставлена голочка
     void setSymptomList(const QStringList &symptomList);
 
     QString patientClass() const;
