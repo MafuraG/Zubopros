@@ -47,16 +47,17 @@ void PatientHistory::setPatientSymthomsList(int wp_page,bool checked, QString va
     auto pdata = patientInfo()->value(wp_page);
     QString symthom_text = value;
     if (checked){
-       pdata->symptomList().append(symthom_text);
+       pdata->addSymtom(symthom_text);
     }else{
-       pdata->symptomList().removeAll(symthom_text);
+       pdata->removeSymtom(symthom_text);
     }
 }
 
 void PatientHistory::clearPatientSymthomList(int wp_page)
 {
     auto pdata = patientInfo()->value(wp_page);
-    pdata->symptomList().clear();
+    QStringList emptyL;
+    pdata->setSymptomList(emptyL);
 }
 
 void PatientHistory::setPatientSymthoms(int wp_page, bool value)
@@ -112,7 +113,7 @@ void PatientHistory::diagnosis(QStringList &groupD2,
                qDebug()<<"D3 = "<<pInfo->patientClass();
            }
        }else{
-            groupD3.append(pInfo->patientClass());
+            groupAllowed.append(pInfo->patientClass());
             qDebug()<<"D3 not allowed = "<<pInfo->patientClass();
        }
 

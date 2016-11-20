@@ -44,63 +44,33 @@ int Wp3_1::nextId() const
 void Wp3_1::on_checkBox_16_clicked(bool checked)
 {
     //Пятна белого цвета
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_16->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+    QString sym_text = ui->checkBox_16->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 
 }
 
 void Wp3_1::on_checkBox_17_clicked(bool checked)
 {
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_17->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+    QString sym_text = ui->checkBox_17->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 }
 
 void Wp3_1::on_checkBox_18_clicked(bool checked)
-{
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_18->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+{    
+    QString sym_text = ui->checkBox_18->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 }
 
 void Wp3_1::on_checkBox_19_clicked(bool checked)
 {
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_19->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+    QString sym_text = ui->checkBox_19->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 }
 
 void Wp3_1::on_checkBox_20_clicked(bool checked)
 {
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_20->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+    QString sym_text = ui->checkBox_20->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 }
 
 void Wp3_1::on_checkBox_21_clicked(bool checked)
