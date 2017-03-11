@@ -1,6 +1,7 @@
 #ifndef WP3_1_H
 #define WP3_1_H
 
+#include "navhelper.h"
 #include "patientdata.h"
 #include "patientwizardpage.h"
 #include <memory>
@@ -12,7 +13,7 @@ namespace Ui {
 class Wp3_1;
 }
 
-class Wp3_1 : public QWizardPage
+class Wp3_1 : public QWizardPage,NavHelper
 {
     Q_OBJECT
 
@@ -26,11 +27,13 @@ public:
 private:
     Ui::Wp3_1 *ui;
     std::shared_ptr<PatientHistory> m_patientHistory;
+    int next_id;
 
     // QWizardPage interface
 public:
     bool validatePage() Q_DECL_OVERRIDE;
-    int nextId() const Q_DECL_OVERRIDE; 
+    int nextId() const Q_DECL_OVERRIDE;
+    //void setNextId(int value){next_id = value;}
 
 
 

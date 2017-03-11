@@ -7,6 +7,7 @@ Wp3_2::Wp3_2(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
 {
     ui->setupUi(this);
     setPatientHistory(patientHistory);
+    next_id = -99;
 }
 
 Wp3_2::~Wp3_2()
@@ -104,3 +105,13 @@ void Wp3_2::enableSpinBoxes(bool value)
     setSpinBoxEnabled(ui->spinBox_4,value);
 }
 
+
+
+int Wp3_2::nextId() const
+{
+    if(m_patientHistory->navigate() == false ) return QWizardPage::nextId();
+    else {
+        //setNavigate(false);
+        return m_patientHistory->nextpage();
+    }
+}

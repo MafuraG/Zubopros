@@ -23,6 +23,12 @@ public:
     void diagnosis();
 
     void setPatientClass(int wp_page, QString value);
+    int nextpage() const;
+    void setNextpage(int nextpage);
+
+    bool navigate(){return m_navigate;}
+    void setNavigate(bool value){ m_navigate = value;}
+
 private:
     QString m_firstName;
     QString m_patronym;
@@ -31,6 +37,8 @@ private:
     uint m_age;
     QDate m_date;
     PatientClass::PatientClassEnum m_pclass;
+    int m_nextpage;
+    bool m_navigate = false;
     std::shared_ptr<QHash<int, std::shared_ptr<PatientData>>> m_patientInfo;    
     void initPatientData();
     void initPatientInfo();

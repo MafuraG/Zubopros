@@ -7,6 +7,7 @@ Wp4_6::Wp4_6(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
 {
     ui->setupUi(this);
     setPatientHistory(patientHistory);
+    next_id = -99;
 }
 
 Wp4_6::~Wp4_6()
@@ -126,4 +127,14 @@ void Wp4_6::enableCheckBoxes(bool value)
     setCheckBoxEnabled(ui->checkBox_192, value);
     setCheckBoxEnabled(ui->checkBox_193, value);
     setCheckBoxEnabled(ui->checkBox_194, value);
+}
+
+
+int Wp4_6::nextId() const
+{
+    if(m_patientHistory->navigate() == false ) return QWizardPage::nextId();
+    else {
+        //setNavigate(false);
+        return m_patientHistory->nextpage();
+    }
 }

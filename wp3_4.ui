@@ -14,48 +14,6 @@
    <string>WizardPage</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="7" column="0" colspan="2">
-    <widget class="QCheckBox" name="checkBox_35">
-     <property name="text">
-      <string>Требуются дополнительные исследования для выявления симптомов болезней пульпы и периодонтальных тканей зубов (К04.) </string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QRadioButton" name="radioButton_8">
-     <property name="text">
-      <string>Нет болезней твердых тканей зубов </string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QCheckBox" name="checkBox_31">
-     <property name="text">
-      <string>Боль</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label_13">
-     <property name="text">
-      <string>Болезни пульпы и периодонтальных тканей зубов (КО4)</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QCheckBox" name="checkBox_32">
-     <property name="text">
-      <string>Отек</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="label_17">
-     <property name="text">
-      <string>Симптомы болезней твердых тканей зубов</string>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="2">
     <spacer name="horizontalSpacer">
      <property name="orientation">
@@ -68,6 +26,48 @@
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="2" column="1">
+    <widget class="QCheckBox" name="checkBox_31">
+     <property name="text">
+      <string>Боль</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QCheckBox" name="checkBox_35">
+     <property name="text">
+      <string>Требуются дополнительные исследования для выявления симптомов болезней пульпы и периодонтальных тканей зубов (К04.) </string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QCheckBox" name="checkBox_32">
+     <property name="text">
+      <string>Отек</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QRadioButton" name="radioButton_8">
+     <property name="text">
+      <string>Нет болезней твердых тканей зубов </string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="label_17">
+     <property name="text">
+      <string>Симптомы болезней твердых тканей зубов</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Болезни пульпы и периодонтальных тканей зубов (КО4)</string>
+     </property>
+    </widget>
    </item>
    <item row="5" column="1">
     <widget class="QCheckBox" name="checkBox_34">
@@ -82,19 +82,6 @@
       <string>Большая пломба</string>
      </property>
     </widget>
-   </item>
-   <item row="6" column="0" colspan="3">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>

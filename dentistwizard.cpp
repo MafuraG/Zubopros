@@ -44,32 +44,26 @@ DentistWizard::DentistWizard(QWidget *parent)
     setPage(PgGlobalConstants::WP_4_5, new Wp4_5(parent,m_patientHistory));
     setPage(PgGlobalConstants::WP_4_6, new Wp4_6(parent,m_patientHistory));
     setPage(PgGlobalConstants::WP_Diagnosis,new WpDiagnosis(parent,m_patientHistory));
-
-//    setPatientHistory(PgGlobalConstants::WP_PatientInfo);
-//    setPatientHistory(PgGlobalConstants::WP_PatientClass);
-//    setPatientHistory(PgGlobalConstants::WP_3_1);
-//    setPatientHistory(PgGlobalConstants::WP_3_2);
-//    setPatientHistory(PgGlobalConstants::WP_3_3);
-//    setPatientHistory(PgGlobalConstants::WP_3_4);
-//    setPatientHistory(PgGlobalConstants::WP_3_5);
-//    setPatientHistory(PgGlobalConstants::WP_3_6);
-//    setPatientHistory(PgGlobalConstants::WP_3_7);
-//    setPatientHistory(PgGlobalConstants::WP_3_8);
-//    setPatientHistory(PgGlobalConstants::WP_3_9);
-//    setPatientHistory(PgGlobalConstants::WP_3_10);
-//    setPatientHistory(PgGlobalConstants::WP_3_11);
-//    setPatientHistory(PgGlobalConstants::WP_3_12);
-//    setPatientHistory(PgGlobalConstants::WP_3_13);
-//    setPatientHistory(PgGlobalConstants::WP_3_14);
-//    setPatientHistory(PgGlobalConstants::WP_4_5);
-//    setPatientHistory(PgGlobalConstants::WP_4_6);
-
-
     setStartId(PgGlobalConstants::WP_PatientInfo);
+
+    navForm = new NavForm();
+
+    connect(navForm,&NavForm::choosenCurrentPage,this,&DentistWizard::setCurrentPage);
+
+    //navForm->show();
 
 }
 
-//void DentistWizard::setPatientHistory(unsigned int pageId){
-//    PatientWizardPage *p_WP = (PatientWizardPage*) page(pageId);
-//    p_WP->setPageHistory(m_patientHistory);
-//}
+void DentistWizard::setCurrentPage(int page)
+{
+    //NavHelper *nav = (NavHelper*)currentPage();
+
+    //nav->setNextIDNav(page);
+    //nav->setNavigate(true);
+    m_patientHistory->setNextpage(page);
+    m_patientHistory->setNavigate(true);
+    nextId();
+    //nav->setNavigate(false);
+    m_patientHistory->setNavigate(false);
+
+}

@@ -5,13 +5,14 @@
 #include <memory>
 #include <QWizardPage>
 #include <QCheckBox>
+#include "navhelper.h"
 #include "patienthistory.h"
 
 namespace Ui {
 class Wp3_3;
 }
 
-class Wp3_3 : public QWizardPage
+class Wp3_3 : public QWizardPage, NavHelper
 {
     Q_OBJECT
 
@@ -23,6 +24,7 @@ public:
     std::shared_ptr<PatientHistory> patientHistory() const;
     void setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory);
     static QString Patient_Class;
+    void setNextId(int value){next_id = value;}
 
 private slots:
     void on_radioButton_40_clicked(bool checked);
@@ -51,7 +53,12 @@ private slots:
 private:
     Ui::Wp3_3 *ui;
     std::shared_ptr<PatientHistory> m_patientHistory;
+    int next_id;
 
+
+    // QWizardPage interface
+public:
+    int nextId() const Q_DECL_OVERRIDE;
 };
 
 #endif // WP3_3_H

@@ -10,6 +10,7 @@ Wp3_1::Wp3_1(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
     ui->setupUi(this);
     setPatientHistory(patientHistory);
     patientHistory->setPatientClass(PgGlobalConstants::WP_3_1,Wp3_1::Patient_Class);
+    next_id = -99;
 }
 
 QString Wp3_1::Patient_Class = "К00, К01";
@@ -37,8 +38,13 @@ bool Wp3_1::validatePage()
 
 int Wp3_1::nextId() const
 {
-    qDebug()<<"going to next page";
-    return PgGlobalConstants::WP_3_2;
+
+    if(m_patientHistory->navigate() == false ) return QWizardPage::nextId();
+    else {
+        //setNavigate(false);
+        return m_patientHistory->nextpage();
+    }
+    //return PgGlobalConstants::WP_3_2;
 }
 
 

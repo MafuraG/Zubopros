@@ -8,6 +8,8 @@ WpDiagnosis::WpDiagnosis(QWidget *parent, std::shared_ptr<PatientHistory> patien
     ui->setupUi(this);
     setPatientHistory(patientHistory);
     dform = new DiagnosisForm();
+    next_id = -99;
+
 }
 
 WpDiagnosis::~WpDiagnosis()
@@ -29,4 +31,14 @@ void WpDiagnosis::setPatientHistory(const std::shared_ptr<PatientHistory> &patie
 void WpDiagnosis::on_diagnosisButton_clicked()
 {
     dform->show();
+}
+
+
+int WpDiagnosis::nextId() const
+{
+    if(m_patientHistory->navigate() == false ) return QWizardPage::nextId();
+    else {
+        //setNavigate(false);
+        return m_patientHistory->nextpage();
+    }
 }

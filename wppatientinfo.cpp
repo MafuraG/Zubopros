@@ -9,6 +9,7 @@ WpPatientInfo::WpPatientInfo(QWidget *parent, std::shared_ptr<PatientHistory> pa
 {
     ui->setupUi(this);
     setPatientHistory(patientHistory);
+    next_id = -99;
 }
 
 WpPatientInfo::~WpPatientInfo()
@@ -28,6 +29,9 @@ void WpPatientInfo::setPatientHistory(const std::shared_ptr<PatientHistory> &pat
 
 int WpPatientInfo::nextId() const
 {
-    return PgGlobalConstants::WP_PatientClass;
+    if(m_patientHistory->navigate() == false ) return QWizardPage::nextId();
+    else {
+        //setNavigate(false);
+        return m_patientHistory->nextpage();
+    }
 }
-

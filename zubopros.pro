@@ -38,7 +38,12 @@ SOURCES += main.cpp \
     pgglobalconstants.cpp \
     patientwizardpage.cpp \
     wpdiagnosis.cpp \
-    diagnosisform.cpp
+    diagnosisform.cpp \
+    treeitem.cpp \
+    treemodel.cpp \
+    navform.cpp \
+    maindialog.cpp \
+    navhelper.cpp
 
 HEADERS  += \
     dentistwizard.h \
@@ -66,7 +71,12 @@ HEADERS  += \
     pgglobalconstants.h \
     patientwizardpage.h \
     wpdiagnosis.h \
-    diagnosisform.h
+    diagnosisform.h \
+    treeitem.h \
+    treemodel.h \
+    navform.h \
+    maindialog.h \
+    navhelper.h
 
 FORMS    += \
     wppatientinfo.ui \
@@ -88,4 +98,9 @@ FORMS    += \
     wp4_5.ui \
     wp4_6.ui \
     wpdiagnosis.ui \
-    diagnosisform.ui
+    diagnosisform.ui \
+    navform.ui \
+    maindialog.ui
+
+RESOURCES += \
+    zuboprosresource.qrc

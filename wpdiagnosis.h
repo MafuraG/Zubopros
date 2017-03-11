@@ -3,6 +3,7 @@
 
 #include <QWizardPage>
 #include "diagnosisform.h"
+#include "navhelper.h"
 #include "patienthistory.h"
 #include <memory>
 
@@ -10,7 +11,7 @@ namespace Ui {
 class WpDiagnosis;
 }
 
-class WpDiagnosis : public QWizardPage
+class WpDiagnosis : public QWizardPage,NavHelper
 {
     Q_OBJECT
 
@@ -22,6 +23,7 @@ public:
 
     std::shared_ptr<PatientHistory> patientHistory() const;
     void setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory);
+    void setNextId(int value){next_id = value;}
 
 private slots:
     void on_diagnosisButton_clicked();
@@ -30,6 +32,11 @@ private:
     Ui::WpDiagnosis *ui;
     DiagnosisForm *dform;
     std::shared_ptr<PatientHistory> m_patientHistory;
+    int next_id;
+
+    // QWizardPage interface
+public:
+    int nextId() const Q_DECL_OVERRIDE;
 };
 
 #endif // WPDIAGNOSIS_H

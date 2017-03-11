@@ -86,13 +86,23 @@ void PatientHistory::setPatientClass(int wp_page, QString value)
 
     pdata->setPatientClass(value);
 }
+int PatientHistory::nextpage() const
+{
+    return m_nextpage;
+}
+
+void PatientHistory::setNextpage(int nextpage)
+{
+    m_nextpage = nextpage;
+}
+
 
 void PatientHistory::diagnosis()
 {
-   QStringList groupD2;
-   QStringList groupD3;
-   QStringList groupAllowed;
-   for (int i = 0; i < patientInfo()->keys().count(); i++){
+    QStringList groupD2;
+    QStringList groupD3;
+    QStringList groupAllowed;
+    for (int i = 0; i < patientInfo()->keys().count(); i++){
        int key = patientInfo()->keys()[i];
        std::shared_ptr<PatientData> pInfo = patientInfo()->value(key);
 
