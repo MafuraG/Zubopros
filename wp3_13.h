@@ -16,12 +16,11 @@ class Wp3_13 : public QWizardPage,NavHelper
     Q_OBJECT
 
 public:
-    explicit Wp3_13(QWidget *parent = 0,
-                   std::shared_ptr<PatientHistory> patientHistory = std::make_shared<PatientHistory>());
+    explicit Wp3_13(QWidget *parent = 0);
     ~Wp3_13();
 
-    std::shared_ptr<PatientHistory> patientHistory() const;
-    void setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory);
+    std::shared_ptr<PatientHistory> patientHistory() ;
+    void setPatientHistory(std::shared_ptr<PatientHistory> &patientHistory);
     static QString Patient_Class;
     void setNextId(int value){next_id = value;}
 

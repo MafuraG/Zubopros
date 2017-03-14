@@ -1,4 +1,5 @@
 #include "patienthistory.h"
+#include <QDebug>
 
 PatientHistory::PatientHistory()
 {
@@ -46,16 +47,17 @@ void PatientHistory::setPatientSymthomsList(int wp_page,bool checked, QString va
     auto pdata = patientInfo()->value(wp_page);
     QString symthom_text = value;
     if (checked){
-       pdata->symptomList().append(symthom_text);
+       pdata->addSymtom(symthom_text);
     }else{
-       pdata->symptomList().removeAll(symthom_text);
+       pdata->removeSymtom(symthom_text);
     }
 }
 
 void PatientHistory::clearPatientSymthomList(int wp_page)
 {
     auto pdata = patientInfo()->value(wp_page);
-    pdata->symptomList().clear();
+    QStringList emptyL;
+    pdata->setSymptomList(emptyL);
 }
 
 void PatientHistory::setPatientSymthoms(int wp_page, bool value)
@@ -97,25 +99,86 @@ void PatientHistory::setNextpage(int nextpage)
 }
 
 
-void PatientHistory::diagnosis()
+void PatientHistory::diagnosis(QStringList &groupD2,
+                                QStringList &groupD3,
+                                QStringList &groupAllowed)
 {
+<<<<<<< HEAD
     QStringList groupD2;
     QStringList groupD3;
     QStringList groupAllowed;
     for (int i = 0; i < patientInfo()->keys().count(); i++){
+=======
+   groupAllowed.clear();
+   groupD2.clear();
+   groupD3.clear();
+
+   for (int i = 0; i < patientInfo()->keys().count(); i++){
+>>>>>>> origin/master
        int key = patientInfo()->keys()[i];
+       if (key == PgGlobalConstants::WP_PatientClass ||
+           key == PgGlobalConstants::WP_PatientInfo) continue;
        std::shared_ptr<PatientData> pInfo = patientInfo()->value(key);
 
+
        if (pInfo->furtherInvestigation() == false){
-           if (pInfo->symptomList().count() == 0 && pInfo){
+           if (pInfo->symptomList().count() == 0){
                groupD2.append(pInfo->patientClass());
+               qDebug()<<"D2 = "<<pInfo->patientClass();
            }else{
                groupD3.append(pInfo->patientClass());
+               qDebug()<<"D3 = "<<pInfo->patientClass();
            }
        }else{
-            groupD3.append(pInfo->patientClass());
+            groupAllowed.append(pInfo->patientClass());
+            qDebug()<<"D3 not allowed = "<<pInfo->patientClass();
        }
 
 
    }
+}
+
+QString PatientHistory::fio() const
+{
+    return m_fio;
+}
+
+void PatientHistory::setFio(const QString &fio)
+{
+    m_fio = fio;
+}
+
+QDate PatientHistory::date() const
+{
+    return m_date;
+}
+
+void PatientHistory::setDate(const QDate &date)
+{
+    m_date = date;
+}
+
+uint PatientHistory::age() const
+{
+    return m_age;
+}
+
+void PatientHistory::setAge(const uint &age)
+{
+    m_age = age;
+}
+
+PatientClass::PatientClassEnum PatientHistory::pclass() const
+{
+    return m_pclass;
+}
+
+QString PatientHistory::pclass_Str()const
+{
+    return PatientClass::toString(pclass());
+}
+
+void PatientHistory::setPclass(const PatientClass::PatientClassEnum &pclass)
+{
+    m_pclass = pclass;
 }

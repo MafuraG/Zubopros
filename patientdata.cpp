@@ -9,7 +9,7 @@ PatientData::~PatientData()
 {
 
 }
-QStringList PatientData::symptomList() const
+QStringList PatientData::symptomList()
 {
     return m_symptomList;
 }
@@ -86,6 +86,18 @@ unsigned int PatientData::number_removed_teeth() const
 void PatientData::setNumber_removed_teeth(unsigned int number_removed_teeth)
 {
     m_number_removed_teeth = number_removed_teeth;
+}
+
+void PatientData::addSymtom(const QString sym)
+{
+    m_symptomList.append(sym);
+    m_symptoms = true;
+}
+
+void PatientData::removeSymtom(const QString sym)
+{
+    m_symptomList.removeAll(sym);
+    if (m_symptomList.count() == 0) m_symptoms = false;
 }
 
 

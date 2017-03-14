@@ -12,8 +12,8 @@ public:
     PatientData();
     ~PatientData();
 
-    QStringList symptomList() const; //список симптомов где поставлена голочка
-    void setSymptomList(const QStringList &symptomList);
+    QStringList symptomList(); //список симптомов где поставлена голочка
+    void setSymptomList(const QStringList &symptomList);    
 
     QString patientClass() const;
     void setPatientClass(const QString &patientClass);
@@ -36,16 +36,17 @@ public:
     unsigned int number_removed_teeth() const;
     void setNumber_removed_teeth(unsigned int number_removed_teeth);
 
-
+    void addSymtom(const QString sym);
+    void removeSymtom(const QString sym);
 private:
     QStringList m_symptomList; //симптомы у пациентов
-    bool m_furtherInvestigation; //Нужен ли еще исследование?
-    bool m_symptoms ; //Есть симптомы или нет?
+    bool m_furtherInvestigation = false; //Нужен ли еще исследование?
+    bool m_symptoms = false ; //Есть симптомы или нет?
     QString m_patientClass;//КО1, КО2, КО3
     QString m_title;
-    unsigned int m_number_plumbed_teeth;
-    unsigned int m_number_caries_teeth;
-    unsigned int m_number_removed_teeth;
+    unsigned int m_number_plumbed_teeth = 0;
+    unsigned int m_number_caries_teeth = 0;
+    unsigned int m_number_removed_teeth = 0;
 };
 
 #endif // PATIENTDATA_H

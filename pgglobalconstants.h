@@ -19,6 +19,10 @@ public:
     static QString CLASS4;
     static QString CLASS_UNKNOWN;
 
+    static QString CLEARED;
+    static QString NOT_CLEARED;
+
+
     enum {
            WP_PatientInfo,
            WP_PatientClass,

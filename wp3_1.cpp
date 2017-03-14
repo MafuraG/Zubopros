@@ -3,13 +3,12 @@
 #include <QDebug>
 #include "pgglobalconstants.h"
 
-Wp3_1::Wp3_1(QWidget *parent, std::shared_ptr<PatientHistory> patientHistory) :
+
+
     QWizardPage(parent),
     ui(new Ui::Wp3_1)
 {
     ui->setupUi(this);
-    setPatientHistory(patientHistory);
-    patientHistory->setPatientClass(PgGlobalConstants::WP_3_1,Wp3_1::Patient_Class);
     next_id = -99;
 }
 
@@ -28,6 +27,7 @@ std::shared_ptr<PatientHistory> Wp3_1::patientHistory() const
 void Wp3_1::setPatientHistory(const std::shared_ptr<PatientHistory> &patientHistory)
 {
     m_patientHistory = patientHistory;
+    patientHistory->setPatientClass(PgGlobalConstants::WP_3_1,Wp3_1::Patient_Class);
 }
 
 bool Wp3_1::validatePage()
@@ -51,63 +51,33 @@ int Wp3_1::nextId() const
 void Wp3_1::on_checkBox_16_clicked(bool checked)
 {
     //Пятна белого цвета
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_16->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+    QString sym_text = ui->checkBox_16->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 
 }
 
 void Wp3_1::on_checkBox_17_clicked(bool checked)
 {
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_17->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+    QString sym_text = ui->checkBox_17->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 }
 
 void Wp3_1::on_checkBox_18_clicked(bool checked)
-{
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_18->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+{    
+    QString sym_text = ui->checkBox_18->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 }
 
 void Wp3_1::on_checkBox_19_clicked(bool checked)
 {
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_19->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+    QString sym_text = ui->checkBox_19->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 }
 
 void Wp3_1::on_checkBox_20_clicked(bool checked)
 {
-    auto pInfo = m_patientHistory->patientInfo();
-    auto pdata = pInfo->value(PgGlobalConstants::WP_3_1);
-    QString symthom_text = ui->checkBox_20->text();
-    if (checked){
-       pdata->symptomList().append(symthom_text);
-    }else{
-       pdata->symptomList().removeAll(symthom_text);
-    }
+    QString sym_text = ui->checkBox_20->text();
+    patientHistory()->setPatientSymthomsList(PgGlobalConstants::WP_3_1,checked,sym_text);
 }
 
 void Wp3_1::on_checkBox_21_clicked(bool checked)
